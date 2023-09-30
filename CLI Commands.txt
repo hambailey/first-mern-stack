@@ -1,0 +1,12 @@
+npm install -g gatsby-cli
+    installing gatsby commands
+npx create-gatsby
+    create a gatsby-react project in the current directory
+npm run development
+    Start the development server.
+http://localhost:8000/
+    View server development site in the browser
+http://localhost:8000/___graphql
+    View GraphiQL, an in-browser IDE, to explore  your site's data and schema
+http://localhost:8000/admin/
+    Netlify CMS is running at this location

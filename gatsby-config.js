@@ -6,5 +6,9 @@ module.exports = {
     title: `First MERN Stack`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-netlify-cms"]
+  plugins: [
+    "gatsby-plugin-netlify-cms",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+]
 };
