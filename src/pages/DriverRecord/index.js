@@ -44,6 +44,8 @@ const DriverRecordPage = () => {
                 <label htmlFor="phoneNumber">Phone Number (optional):
                     <input type="text" id="phoneNumber" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange}/>
                 </label>
+                <br/>
+                <input type="submit" value="Submit" />
             </form>
         </Layout>
     )
