@@ -3,7 +3,9 @@ import { useState } from 'react'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
-const BWCTruckDriverOrientationRecordsPage = () => {
+// BWCTruckDriverOrientationRecords
+
+const DriverRecordPage = () => {
     const [formData, setFormData] = useState({name: "", carrier: "", TWICExp: "", product: "", phoneNumber: ""});
     // const [inputError, setInputError] = useState({});
 
@@ -25,13 +27,17 @@ const BWCTruckDriverOrientationRecordsPage = () => {
             <form onSubmit={handleSubmit}>
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
+                <br/>
                 <label htmlFor="carrier">Carrier:</label>
                 <input type="carrier" id="carrier" name="carrier" value={formData.carrier} onChange={handleChange}/>
+                <br/>
                 <label htmlFor="TWICExp">TWIC Expiration:</label>
                 <input type="text" id="TWICExp" name="TWICExp" value={formData.TWICExp} onChange={handleChange}/>
+                <br/>
                 <label htmlFor="product">Product:</label>
                 <input type="text" id="product" name="product" value={formData.product} onChange={handleChange}/>
-                <label htmlFor="phoneNumber">Phone Number:</label>
+                <br/>
+                <label htmlFor="phoneNumber">Phone Number (optional):</label>
                 <input type="text" id="phoneNumber" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange}/>
             </form>
         </Layout>
@@ -40,4 +46,4 @@ const BWCTruckDriverOrientationRecordsPage = () => {
 
 export const Head = () => <Seo title="Driver Orientation" />
 
-export default BWCTruckDriverOrientationRecordsPage
+export default DriverRecordPage
