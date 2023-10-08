@@ -1,52 +1,25 @@
 import * as React from 'react'
 import { useState } from 'react'
+import DriverForm from '../../components/driverForm'
 import Layout from '../../components/layout'
 import Seo from '../../components/seo'
 
 // BWCTruckDriverOrientationRecords
 
 const DriverRecordPage = () => {
-    const [formData, setFormData] = useState({name: "", carrier: "", TWICExp: "", product: "", phoneNumber: ""});
-    // const [inputError, setInputError] = useState({});
-
-    const handleChange = (event) => {
-        const { name, value } = event.target;
-        setFormData((prevFormData) => ({ ...prevFormData, [name]: value}));
-        
-    };
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        alert('Name: $formData.name, has been registered');
-
-    };
 
     return (
         <Layout pageTitle="Truck Driver Orientation Records" >
             <p> Purpose: easy search list for truck drivers that have signed an orientation paper.</p>
-            <p> Let's create a form. The form creates a seperate .mdx file per driver. (overkill on purpose to allow for more features later) </p>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="name">Name:
-                    <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
-                </label>
-                <br/>
-                <label htmlFor="carrier">Carrier:
-                    <input type="carrier" id="carrier" name="carrier" value={formData.carrier} onChange={handleChange}/>
-                </label>
-                <br/>
-                <label htmlFor="TWICExp">TWIC Expiration:
-                    <input type="text" id="TWICExp" name="TWICExp" value={formData.TWICExp} onChange={handleChange}/>
-                </label>
-                <br/>
-                <label htmlFor="product">Product:
-                    <input type="text" id="product" name="product" value={formData.product} onChange={handleChange}/>
-                </label>
-                <br/>
-                <label htmlFor="phoneNumber">Phone Number (optional):
-                    <input type="text" id="phoneNumber" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange}/>
-                </label>
-                <br/>
-                <input type="submit" value="Submit" />
-            </form>
+            <p> Let's create a form. The form creates a seperate .mdx file per driver. (overkill on purpose to allow for more features later)</p>
+            <p> After server record saves established. Make Carrier and Product dropdown selections. This will require a webpage for creating new selections for each domain.</p>
+            <p> Future Features: 
+                <li>
+                    Notification for drivers expiring soon.
+                </li>
+            </p>
+            <p> Current task: submit each driver to a server as a record.</p>
+            <DriverForm />
         </Layout>
     )
 }
