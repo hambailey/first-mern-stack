@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { useState } from 'react'
 import Layout from '../../components/layout'
+import Seo from '../../components/seo'
 
-const BWCTruckDriverOrientationRecords = () => {
+const BWCTruckDriverOrientationRecordsPage = () => {
     const [formData, setFormData] = useState({name: "", carrier: "", TWICExp: "", product: "", phoneNumber: ""});
     // const [inputError, setInputError] = useState({});
 
@@ -37,6 +38,6 @@ const BWCTruckDriverOrientationRecords = () => {
     )
 }
 
-export const Head = () => <title>Truck DRiver Orientation Records</title>
+export const Head = () => <Seo title="Driver Orientation" />
 
-export default BWCTruckDriverOrientationRecords
+export default BWCTruckDriverOrientationRecordsPage
