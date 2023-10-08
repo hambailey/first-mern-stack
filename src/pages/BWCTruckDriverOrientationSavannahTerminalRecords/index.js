@@ -4,7 +4,7 @@ import Layout from '../../components/layout'
 
 const BWCTruckDriverOrientationRecords = () => {
     const [formData, setFormData] = useState({name: "", carrier: "", TWICExp: "", product: "", phoneNumber: ""});
-    const [inputError, setInputError] = useState({});
+    // const [inputError, setInputError] = useState({});
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -13,7 +13,7 @@ const BWCTruckDriverOrientationRecords = () => {
     };
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert('Name: ${formData.name}, has been registered');
+        alert('Name: $formData.name, has been registered');
 
     };
 
