@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useState } from 'react'
 
 class DriverForm extends React.Component {
     constructor(props){
@@ -11,13 +12,18 @@ class DriverForm extends React.Component {
             phoneNumber: "",
         };
 
-        // this.handleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // handleChange(event){
-    //     create code to check correct formats and data before submission
-    // }
+    handleChange(event){
+        const target = event.target;
+        const value = target.value;
+        const name = target.name;
+        this.setState({
+            [name]: value
+        });
+    }
 
     handleSubmit(event){
         const name = event.target.name;
@@ -25,12 +31,12 @@ class DriverForm extends React.Component {
             [name]: event.target.value
         });
         event.preventDefault();
-        alert('Driver info submitted: ' +
-            this.state.driverName + '</br>' +
-            this.state.carrier + '</br>' +
-            this.state.TWICExp + '</br>' +
-            this.state.product + '</br>' +
-            this.state.phoneNumber
+        alert('Driver info submitted:  \n' +
+            'Driver: ' + this.state.driverName + '\n' +
+            'Carrier: ' + this.state.carrier + '\n' +
+            'TWIC Expiration: ' + this.state.TWICExp + '\n' +
+            'Product: ' + this.state.product + '\n' +
+            'Phone Number: ' + this.state.phoneNumber
         );
     }
 
@@ -49,7 +55,7 @@ class DriverForm extends React.Component {
                 <br/>
                 <label htmlFor="carrier">Carrier:
                     <input
-                        type="carrier"
+                        type="text"
                         id="carrier"
                         name="carrier"
                         value={this.state.carrier}
